@@ -150,7 +150,9 @@ ENV PATH $PATH:$SPARK_HOME/bin
 COPY . /root/
 RUN pip install -r /root/requirements.txt
 RUN mkdir /root/.jupyter/ && \
-    mv /root/jupyter_notebook_config.py /root/.jupyter/
+    mv /root/jupyter_notebook_config.py /root/.jupyter/  && \
+    jupyter contrib nbextension install --user && \
+    jupyter nbextensions_configurator enable --user
 EXPOSE 8888
 
 # ENVIRONMENT VARIABLES
