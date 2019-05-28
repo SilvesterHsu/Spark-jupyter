@@ -143,11 +143,11 @@ CMD ["python3"]
 COPY --from=build /usr/local/ /usr/local/
 
 ENV SPARK_HOME /usr/local/spark-2.4.3-bin-hadoop2.7
-# ENV SPARK_HOME /usr/local/spark-2.2.0-bin-hadoop2.7
 ENV PATH $PATH:$SPARK_HOME/bin
 
 # PIP
-COPY . /root/
+COPY requirements.txt /root/
+COPY jupyter_notebook_config.py /root/
 RUN pip install -r /root/requirements.txt
 RUN mkdir /root/.jupyter/ && \
     mv /root/jupyter_notebook_config.py /root/.jupyter/  && \
@@ -160,13 +160,15 @@ RUN mkdir /root/.jupyter/ && \
     jupyter nbextension enable snippets_menu/main && \
     jupyter nbextension enable code_prettify/autopep8 && \
     jupyter nbextension enable toggle_all_line_numbers/main
-EXPOSE 8888
 
 # ENVIRONMENT VARIABLES
-# ENV JAVA_HOME /opt/jdk/jdk1.8.0_211
 ENV PYSPARK_PYTHON /usr/local/bin/python
 ENV PYTHONPATH /usr/local/spark-2.4.3-bin-hadoop2.7/python/lib/py4j-0.10.7-src.zip:/usr/local/spark-2.4.3-bin-hadoop2.7/python:PYSPARK_DRIVER_PYTHON=ipython
 
+
 RUN mkdir /notebooks
 WORKDIR "/notebooks"
+
+EXPOSE 8888
+VOLUME ["/notebooks"]
 CMD ["/bin/bash", "-c", "jupyter notebook --allow-root"]
