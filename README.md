@@ -1,5 +1,6 @@
 # Spark-jupyter
-Warehouse for building Docker images
+Warehouse for building Docker images.
+
 Docker Link: [spark-jupyter](https://cloud.docker.com/u/silvesterhsu/repository/docker/silvesterhsu/spark-jupyter)
 
 Avaliable tags:
