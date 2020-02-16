@@ -40,7 +40,7 @@ Once the password is set and successfully logged in, jupyterLab completes the pa
 Use `control+C` to stop the jupyterlab container, or start a new terminal:
 
 ```
-docker restart stacks
+docker restart spark
 ```
 
 It is necessary to restart the container. After the password is stored, it needs to be restarted to apply.
