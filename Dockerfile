@@ -39,9 +39,8 @@ RUN mkdir /root/.jupyter/ && \
     jupyter nbextension enable snippets_menu/main && \
     jupyter nbextension enable code_prettify/autopep8 && \
     jupyter nbextension enable toggle_all_line_numbers/main && \
-    jupyter nbextension enable latex_envs/latex_envs && \
-    echo "c.NotebookApp.terminado_settings = {'shell_command': ['/bin/zsh']}" >> ~/.jupyter/jupyter_notebook_config.py
-
+    jupyter nbextension enable latex_envs/latex_envs
+    
 # ENVIRONMENT VARIABLES
 ENV PYSPARK_PYTHON /usr/local/bin/python
 ENV PYTHONPATH /usr/local/spark-2.3.2/python/lib/py4j-0.10.7-src.zip:/usr/local/spark-2.3.2/python:PYSPARK_DRIVER_PYTHON=ipython
