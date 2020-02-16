@@ -4,5 +4,5 @@ autopep8
 numpy
 pandas
 jupyter
-notebook
-pyspark
+notebook==5.7.8
+pyspark==2.3.2
