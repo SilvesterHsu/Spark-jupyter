@@ -1,5 +1,7 @@
 # Spark-jupyter
-Warehouse for building Docker images.
+This is a Docker image for the course COM6012 Scalable Machine Learning of the University of Sheffield.
+
+By request, this image is build based on **python 3.6** and **spark 2.3.2**.
 
 Docker Link: [spark-jupyter](https://cloud.docker.com/u/silvesterhsu/repository/docker/silvesterhsu/spark-jupyter)
 
@@ -15,7 +17,7 @@ docker run -it --name spark --restart=always -p "$PORT":8888 -v "$PWD":/notebook
 
 `$PWD`: File mapping. Project work path
 
-`$TAG`: For the time being, only `latest`, if not filled in, the latest version is downloaded by default. The ARM version may be available in the future.
+`$TAG`: For the time being, only `latest` and `slim`, if not filled in, the latest version is downloaded by default. (Recommend `slim`) The ARM version may be available in the future.
 
 **Example:**
 
@@ -35,9 +37,9 @@ Use the `token` to setup a password when you open the browser `127.0.0.1:8888`.
 
 ![set password](https://tva1.sinaimg.cn/large/006y8mN6gy1g7i9ghwmaxj30gg06tdg8.jpg)
 
-Once the password is set and successfully logged in, jupyterLab completes the password configuration. You need to terminate and restart the lab container in the terminal.
+Once the password is set and successfully logged in, jupyter completes the password configuration. You need to terminate and restart the spark container in the terminal.
 
-Use `control+C` to stop the jupyterlab container, or start a new terminal:
+Use `control+C` to stop the spark container, and restart spark container:
 
 ```
 docker restart spark
