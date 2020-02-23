@@ -1,8 +1,0 @@
-jupyter_contrib_nbextensions
-jupyter_nbextensions_configurator
-autopep8
-numpy
-pandas
-jupyter
-notebook==5.7.8
-pyspark==2.3.2
